@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Movies</h1>
+  <ul id="movies-list"></ul>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch('/movies');
+        const movies = await response.json();
+        const moviesList = document.getElementById('movies-list');
+
+        movies.forEach(movie => {
+          const li = document.createElement('li');
+          li.textContent = `${movie.Title} (${movie.ReleaseYear}) - Directed by ${movie.DirectorID}`;
+          moviesList.appendChild(li);
+        });
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+      }
+    });
+  </script>
+</body>
+</html>

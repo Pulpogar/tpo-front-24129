@@ -70,7 +70,7 @@
 		<br>
     <ul class="ul">
       <li class="li"><a href="index.html" class="a"><i class="fa-solid fa-couch"></i> Inicio</a></li>
-      <li class="li"><a href="search.html" class="a"><i class="fa-solid fa-search"></i> Buscar</a></li>
+      <!-- <li class="li"><a href="search.html" class="a"><i class="fa-solid fa-search"></i> Buscar</a></li> -->
       <li class="li"><a href="genders.html" class="a"><i class="fa-solid fa-clapperboard"></i> Géneros</a></li>
       <li class="li"><a href="reviews.html" class="a"><i class="fa-solid fa-film"></i> Reviews</a></li>
       <li class="li"><a href="contact.html" class="a"><i class="fa-solid fa-comment-dots"></i> Contacto</a></li>
@@ -80,8 +80,24 @@
     
     <main>
       <div class="paginacion"><h5 id="resultSearch">Géneros disponibles</h5></div>
-      <div class="contenedor" id="generos"></div>
-  
+      <ul id="categories-list"></ul>
+        <script>
+          document.addEventListener('DOMContentLoaded', async () => {
+            try {
+              const response = await fetch('/categories');
+              const categories = await response.json();
+              const categoriesList = document.getElementById('categories-list');
+
+              categories.forEach(category => {
+                const li = document.createElement('li');
+                li.textContent = `(${category.CategoryID}) ${category.CategoryName}`;
+                categoriesList.appendChild(li);
+              });
+            } catch (error) {
+              console.error('Error fetching movies:', error);
+            }
+          });
+        </script>  
     </main>
 
     <script src="js/genders.js"></script>
