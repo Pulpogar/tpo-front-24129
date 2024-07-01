@@ -1,0 +1,43 @@
+.contenedor {
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+    align-items: center;
+
+	display: grid;    
+	grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+	gap: 10px;
+}
+
+table {
+    width: 100%;
+	max-width: 1000px;
+    text-align: left;
+    /* position: relative; */
+    /* border-collapse: collapse;  */
+    background-color: #f6f6f6;
+    border-radius: 15px;
+
+  }
+
+  td, th {
+    padding: 5px;
+  }
+
+  th {
+    background: #16113c;
+    color: #e0e0e0;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  .primary{
+    background-color: #000000
+  }
+  
+  tbody > tr:hover {
+    background-color:  rgb(38, 198, 238);
+  }

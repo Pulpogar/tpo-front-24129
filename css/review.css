@@ -1,0 +1,110 @@
+.iframe_body {
+    display:block;
+	background: #e0e0e0;
+}
+
+.rev_iframe {
+    display:block;
+    width:90%;
+    height: 50vw;
+    margin: 1vw auto 3vw;
+    border: solid 2px #16113c;
+	border-radius: 15px;
+	box-shadow:
+	inset 0 -3em 3em rgba(0,0,0,0.4),
+		  0.3em 0.3em 1em rgba(0,0,0,0.7);
+}
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 1780px) {
+
+	.contenedor {
+		width: 90%;
+		max-width: 1000px;
+		margin: 40px auto 100px auto;
+	
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 10px;
+	}
+
+	.contenedor .pelicula .textos {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 900px) {
+
+	.contenedor {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 10px;
+	}
+
+	.contenedor .pelicula .textos {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 700px) {
+
+	.contenedor {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+	}
+
+	.contenedor .pelicula .textos {
+		font-size: 0.8em;
+	}
+}
+
+@media screen and (max-width: 500px) {
+
+	.contenedor {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+	}
+
+	.contenedor .pelicula .textos {
+		font-size: 0.6em;
+	}
+
+}
+
+@media screen and (max-width: 400px) {
+
+	.contenedor {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	}
+
+	.contenedor .pelicula .textos {
+		font-size: 0.7em;
+	}
+
+}
+
+@media screen and (max-width: 200px) {
+
+	.contenedor {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 10px;
+	}
+
+	.contenedor .pelicula .textos {
+		font-size: 0.7em;
+	}
+
+	.filter {
+		font-size: 0.6rem;	
+	}
+
+	.filter select {
+		font-size: 0.65rem;
+	}
+
+}
