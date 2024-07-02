@@ -103,7 +103,7 @@
                     const categoriesList = document.getElementById('tabla1');
     
                     categories.forEach(category => {
-                        const li = document.createElement('li');
+                        const li = document.createElement('tr');
                         li.textContent = `(${category.CategoryID}) ${category.CategoryName}`;
                         categoriesList.appendChild(li);
                     });
@@ -117,7 +117,7 @@
                     const directorsList = document.getElementById('tabla2');
     
                     directors.forEach(director => {
-                        const li = document.createElement('li');
+                        const li = document.createElement('tr');
                         li.textContent = `(${director.DirectorID}) ${director.DirectorName}`;
                         directorsList.appendChild(li);
                     });
