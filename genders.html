@@ -79,25 +79,54 @@
     </header>
     
     <main>
-      <div class="paginacion"><h5 id="resultSearch">Géneros disponibles</h5></div>
-      <ul id="categories-list"></ul>
+      <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categorías</th>
+                    <th>Directores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="tabla1"></td>
+                    <td id="tabla2"></td>
+                </tr>
+            </tbody>
+        </table>
+    
         <script>
-          document.addEventListener('DOMContentLoaded', async () => {
-            try {
-              const response = await fetch('https://cors-anywhere.herokuapp.com/https://cyberex.alwaysdata.net/categories');
-              const categories = await response.json();
-              const categoriesList = document.getElementById('categories-list');
-
-              categories.forEach(category => {
-                const li = document.createElement('li');
-                li.textContent = `(${category.CategoryID}) ${category.CategoryName}`;
-                categoriesList.appendChild(li);
-              });
-            } catch (error) {
-              console.error('Error fetching movies:', error);
-            }
-          });
-        </script>  
+            document.addEventListener('DOMContentLoaded', async () => {
+                try {
+                    const response1 = await fetch('https://cors-anywhere.herokuapp.com/https://cyberex.alwaysdata.net/categories');
+                    const categories = await response1.json();
+                    const categoriesList = document.getElementById('tabla1');
+    
+                    categories.forEach(category => {
+                        const li = document.createElement('li');
+                        li.textContent = `(${category.CategoryID}) ${category.CategoryName}`;
+                        categoriesList.appendChild(li);
+                    });
+                } catch (error) {
+                    console.error('Error fetching categories:', error);
+                }
+    
+                try {
+                    const response2 = await fetch('https://cors-anywhere.herokuapp.com/https://cyberex.alwaysdata.net/directors');
+                    const directors = await response2.json();
+                    const directorsList = document.getElementById('tabla2');
+    
+                    directors.forEach(director => {
+                        const li = document.createElement('li');
+                        li.textContent = `(${director.DirectorID}) ${director.DirectorName}`;
+                        directorsList.appendChild(li);
+                    });
+                } catch (error) {
+                    console.error('Error fetching directors:', error);
+                }
+            });
+        </script>
+    </body>
     </main>
 
     <script src="js/genders.js"></script>
