@@ -109,7 +109,8 @@
                 let pelis = '';
                 movies.forEach(movie => {
                 pelis += `
-					<article class="movie">						
+					<article class="movie">
+            <img class="card" src="${movie.MovieImage}">						
 						<div class="movie-info"><h3>${movie.Title}</h3></div>
 					</article>
 				`;
