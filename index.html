@@ -69,7 +69,7 @@
           <!-- <li class="li"><a href="search.html" class="a"><i class="fa-solid fa-search"></i> Buscar</a></li> -->
           <li class="li"><a href="genders.html" class="a"><i class="fa-solid fa-clapperboard"></i> Géneros</a></li>
           <li class="li"><a href="reviews.html" class="a"><i class="fa-solid fa-film"></i> Reviews</a></li>
-          <li class="li"><a href="contact.html" class="a"><i class="fa-solid fa-comment-dots"></i> Contacto2</a></li>
+          <li class="li"><a href="contact.html" class="a"><i class="fa-solid fa-comment-dots"></i> Contacto</a></li>
         </ul>
       </nav>
     </header>
@@ -102,12 +102,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
               try {
-                const response = await fetch('https://cyberex.alwaysdata.net/movies', {
-	                  'mode': 'cors',
-	                  'headers': {
-            	      'Access-Control-Allow-Origin': '*',
-        	          }
-    	          });
+                const response = await fetch('https://cors-anywhere.herokuapp.com/https://cyberex.alwaysdata.net/movies');
                 const movies = await response.json();
                 const moviesList = document.getElementById('contenedor');
                 
