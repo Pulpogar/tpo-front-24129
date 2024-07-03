@@ -95,7 +95,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
                 try {
-                    const response1 = await fetch('https://cors-anywhere.herokuapp.com/https://cyberex.alwaysdata.net/categories');
+                    const response1 = await fetch('https://cyberex.alwaysdata.net/categories');
                     const categories = await response1.json();
                     const categoriesList = document.getElementById('tabla1');
     
@@ -109,7 +109,7 @@
                 }
     
                 try {
-                    const response2 = await fetch('https://cors-anywhere.herokuapp.com/https://cyberex.alwaysdata.net/directors');
+                    const response2 = await fetch('https://cyberex.alwaysdata.net/directors');
                     const directors = await response2.json();
                     const directorsList = document.getElementById('tabla2');
     
